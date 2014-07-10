@@ -1,15 +1,30 @@
 /* Main Styles */
+html {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 2px 2px 3px;
+  background-color: rgb(240, 240, 240);
+  border: 2px solid rgb(255, 255, 255);
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.298039) 2px 2px 3px;
+}
+
 body {
-  min-width: 357px;
+  min-width: 200px;
   overflow-x: hidden;
-  background-color: #E0E0E0;
-  padding: 15px;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h2{
+  font-size: 26px;
+  font-weight: 100;
+  line-height: lighter;
   font-family: sans-serif;
-  font-weight: lighter;
-  color: #484848;
+  color: #676A6C;
   text-align: center;
 }
 
