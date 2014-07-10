@@ -1,0 +1,29 @@
+.inbox-container {
+  height: 26px;
+  position: absolute;
+  left: 40px;
+  z-index: 5;
+  margin-top: -26px;
+}
+
+.inbox-icon1 {
+  background: url("https://i.imgur.com/qbC4mCk.png") no-repeat;
+  background-size: 24px 24px;
+  background-position: center center;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.inbox-icon2 {
+  background: url("https://i.imgur.com/L8Cb11Z.png") no-repeat;
+  background-size: 24px 24px;
+  background-position: center center;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 5;
+}
