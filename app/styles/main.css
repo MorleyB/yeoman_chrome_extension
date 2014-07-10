@@ -56,7 +56,7 @@ span.buttonText {
   width: 100%;
   border-radius: 3px;
   overflow: hidden;
-  background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+  background: #fafafa url("../images/icon.png") no-repeat 90% 50%;
   position: relative;
 }
 

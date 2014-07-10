@@ -40,7 +40,8 @@
   ],
   "permissions": [
     "tabs",
-    "http://*/*",
-    "https://*/*"
+    "https://touchstream.io/auth/google/*",
+    "https://staging.touchstream.io/auth/google/*",
+    "http://lvh.me:3000/auth/google/*"
   ]
 }
