@@ -20,10 +20,25 @@ j(document).ready(function(){
       envUrl = "http://lvh.me:3000/auth/google/";
   }
 
+
   chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
     current_url = tabs[0].url;
     current_tab_id = tabs[0].id;
   });
+
+
+  function populateSelectBox(){
+     var resp = {"streams": [ {name: "theName", id: "1"}, {name: "otherName", id: "2"}]};
+     var optionTemplate = "<option value=\"{streamID}\">{streamName}</option>";
+     for(var i = 0; i < resp.streams.length; i++){
+       var obj = resp.streams[i];
+       var currentOptionTemplate = optionTemplate;
+       currentOptionTemplate = currentOptionTemplate.replace("{streamID}", obj.id);
+       currentOptionTemplate = currentOptionTemplate.replace("{streamName}", obj.name);
+       j("#selectedStream").append(j(currentOptionTemplate));
+     }
+  }
+
 
   function GETStreamOrRedirect() {
     var xhr = new XMLHttpRequest();
@@ -37,21 +52,20 @@ j(document).ready(function(){
           chrome.tabs.update(current_tab_id, {url: envUrl + "sign_in"});
         } else {
         //   alert('not hooked up yet');
-        //   var resp = {"streams": [ {"sweet":"cookies", "savory":"pizza"}]};
         }
       }
     }
     xhr.send();
+    populateSelectBox();
   }
 
-  GETStreamOrRedirect();
 
-  // settime out for temporary interface update to show current url
   window.onload = function() {
     setTimeout(function() {
       j("#current_location").html(current_url);
     }, 0);
   }
 
+  GETStreamOrRedirect();
 });
 
