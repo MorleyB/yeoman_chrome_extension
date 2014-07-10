@@ -4,6 +4,7 @@
   left: 40px;
   z-index: 5;
   margin-top: -26px;
+  z-index: 1;
 }
 
 .inbox-icon1 {
@@ -14,7 +15,7 @@
   height: 34px;
   display: inline-block;
   cursor: pointer;
-  z-index: 5;
+  z-index: -2147483648;
 }
 
 .inbox-icon2 {
@@ -25,5 +26,5 @@
   height: 34px;
   display: inline-block;
   cursor: pointer;
-  z-index: 5;
+  z-index: -2147483648;
 }
