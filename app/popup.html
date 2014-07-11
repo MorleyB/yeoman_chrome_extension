@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-    <head>        
+    <head>
         <!-- bower:css -->
         <!-- endbower -->
 
@@ -17,24 +17,24 @@
         <!-- endbuild -->
     </head>
     <body>
-      <h2>touchStream</h2>
-          <div id="loading_spinner"></div>
-          <h5 id="current_location"></h5>
+      <div id="header">
+          <h2>touchStream</h2>
+      </div>
 
-          <div>
-            <p>Add to Stream:</p>
-            <div class="select-style">
-              <select id="selectedStream"></select>
-            </div>
-          </div>
+      <div id="lower-content">
+        <div class="pull-left" id="text-left">
+          <textarea id="blurb_stream"></textarea>
+        </div>
 
-          <div>
-            <p>Add a blurb:</p>
-            <div>
-              <textarea id="blurb_stream"></textarea>
-              <button id="saveButton" onClick="alert('saved!')">Save</button>
-            </div>
-          </div>
+        <div class="pull-left" id="options-right">
+          <div class="select-style"><select id="selectedStream"></select></div>
+          <button id="saveButton" onClick="alert('saved!')">Save</button>
+        </div>
+
+        <div id="loading_spinner"></div>
+        <h5 id="current_location"></h5>
+      </div>
+
     </body>
 
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
