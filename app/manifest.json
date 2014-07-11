@@ -1,6 +1,6 @@
 {
     "name": "touchStream",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "Touchstream provides an efficient method of maintaining strong relationships with clients.",
     "icons": {
@@ -14,34 +14,34 @@
             "scripts/background.js"
         ]
     },
-  "browser_action": {
-    "default_icon": {
-      "19": "images/icon.png",
-      "38": "images/icon.png"
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon.png",
+            "38": "images/icon.png"
+        },
+        "default_title": "touchStream",
+        "default_popup": "popup.html"
     },
-    "default_title": "touchStream",
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "css": [
-        "styles/main.css"
-      ],
-      "js": [
-        "scripts/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false
-    }
-  ],
-  "permissions": [
-    "tabs",
-    "https://touchstream.io/auth/google/*",
-    "https://staging.touchstream.io/auth/google/*",
-    "http://lvh.me:3000/auth/google/*"
-  ]
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "css": [
+                "styles/main.css"
+            ],
+            "js": [
+                "scripts/contentscript.js"
+            ],
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "https://touchstream.io/auth/google/*",
+        "https://staging.touchstream.io/auth/google/*",
+        "http://lvh.me:3000/auth/google/*"
+    ]
 }
