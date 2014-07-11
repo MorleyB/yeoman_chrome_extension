@@ -5,6 +5,7 @@ var envUrl = undefined;
 var current_url = undefined;
 var current_tab_id = undefined;
 var j = jQuery.noConflict();
+var xhr = new XMLHttpRequest();
 
 
 j(document).ready(function(){
@@ -28,7 +29,7 @@ j(document).ready(function(){
 
 
   function populateSelectBox(){
-     var resp = {"streams": [ {name: "theName", id: "1"}, {name: "otherName", id: "2"}]};
+     var resp = {"streams": [ {name: "theName", id: "1"}, {name: "reallyLongStreamName", id: "2"}]};
      var optionTemplate = "<option value=\"{streamID}\">{streamName}</option>";
      for(var i = 0; i < resp.streams.length; i++){
        var obj = resp.streams[i];
@@ -41,7 +42,6 @@ j(document).ready(function(){
 
 
   function GETStreamOrRedirect() {
-    var xhr = new XMLHttpRequest();
     xhr.open("GET", "#{envUrl}/streams", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
@@ -59,12 +59,32 @@ j(document).ready(function(){
     populateSelectBox();
   }
 
+	j("#saveButton").click(function() {
+		//get ID from selected option
+		//get name of stream and message
+		//should not post if no id selected / undefined
+	//	var stream = j("#selectedStream option:selected").text();
+		var ID = j("#selectedStream option:selected").val();
+		var blurb = j("#blurb_stream").val();
 
-  window.onload = function() {
-    setTimeout(function() {
-      j("#current_location").html(current_url);
-    }, 0);
-  }
+		//if(blurb != undefined){
+    		xhr.open("POST", "#{envUrl}/streams/#{ID}/#{blurb}", true);
+    		xhr.onreadystatechange = function() {
+    			if (xhr.readyState == 4) {
+    				alert('saved!');
+    				} else {
+    				alert('not working');
+    				}
+    	}
+    	xhr.send();
+		//}
+	});
+
+  setTimeout(function() {
+  	var prefill = "Thought you might find this interesting. &#013; &#013;" + current_url;
+    j("#blurb_stream").html(prefill);
+  }, 100);
+
 
   GETStreamOrRedirect();
 });
