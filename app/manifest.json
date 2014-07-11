@@ -1,6 +1,6 @@
 {
     "name": "touchStream",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
     "description": "Touchstream provides an efficient method of maintaining strong relationships with clients.",
     "icons": {
@@ -10,31 +10,32 @@
     "default_locale": "en",
     "background": {
         "scripts": [
-          "scripts/static/jquery.min.js",  
+          "scripts/static/jquery.min.js",
           "scripts/chromereload.js",
           "scripts/background.js"
         ]
     },
-  "browser_action": {
-    "default_icon": {
-      "19": "images/icon.png",
-      "38": "images/icon.png"
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon.png",
+            "38": "images/icon.png"
+        },
+        "default_title": "touchStream",
+        "default_popup": "popup.html"
     },
-    "default_title": "touchStream",
-    "default_popup": "popup.html"
-  },
   "content_scripts": [
   {
     "matches": ["https://mail.google.com/mail/u/*/*"],
-    "css": ["styles/inject.css"],
+    "css": ["styles/inject.css", "styles/main.css"],
     "js": ["scripts/static/jquery.min.js", "scripts/content.js"],
     "all_frames": true,
     "run_at": "document_end"
   }
   ],
-  "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*"
-  ]
+    "permissions": [
+        "tabs",
+        "https://touchstream.io/auth/google/*",
+        "https://staging.touchstream.io/auth/google/*",
+        "http://lvh.me:3000/auth/google/*"
+    ]
 }
