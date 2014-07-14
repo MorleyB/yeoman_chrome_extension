@@ -2,18 +2,17 @@
 html {
   -webkit-box-shadow: rgba(0, 0, 0, 0.298039) 2px 2px 3px;
   background-color: #F3F3F4;
-  border: 2px solid rgb(255, 255, 255);
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.298039) 2px 2px 3px;
+  border: none;
 }
 
 body {
-  min-width: 450px;
+  min-width: 350px;
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
   padding: 0 !important;
   margin: 0 !important;
   color: #676a6c;
+  height: 100%;
 }
 
 h2{
@@ -27,19 +26,54 @@ h2{
   padding: 15px 0;
 }
 
+.side-area {
+  width: 35%;
+  color: #A7B1C2;
+  float: left;
+}
+
 #header {
-  border-bottom: 1px solid rgb(223, 223, 223);
+  background: url('../images/header-profile.png');
+  padding: 15px;
+  height: 50px;
 }
 
-#lower-content {
-  border-top: 4px solid #E7EAEC;
-  background: #F3F3F4;
-  padding: 2em 1em 1.25em;
-  clear: both;
-  height: 100px;
+#streams-container {
+  background: #2F4050;
 }
 
+ul#streams-list {
+  margin: 0 !important;
+  height: 118px;
+  overflow-y: auto;
+}
 
+ul li {
+  padding: 9px 15px;
+  cursor: pointer;
+}
+
+ul li:hover {
+  background: #293846;
+}
+
+.selected-list {
+  border-left: 5px solid #1AB394;
+  background: #364D63;
+}
+
+#logo {
+  border-radius: 50%;
+  background: #bbb;
+  height: 48px;
+  width: 48px;
+}
+
+#main-area {
+  width: 56%;
+  float: left;
+  padding: 15px;
+}
 
 /*====== select box, button and text area styles =========*/
 
@@ -81,27 +115,26 @@ h2{
   z-index: 100;
 }
 
-#text-left {
-  width: 65%;
-  float: left;
+textarea {
+  width: 91%;
+  height: 70px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  padding: 8px;
 }
 
-textarea {
-  width: 95%;
-  height: 80px;
-  border: none;
-  padding: 8px;
+textarea, input {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
 
-#options-right {
-  width: 30%;
-  float: left;
-  margin-left: 16px;
+input {
+  padding: 4px 8px;
+  width: 90%;
+  border: 1px solid #ddd;
 }
+
 button {
   padding: 5px 10px;
-  margin-top: 27px;
   width: 100%;
 }

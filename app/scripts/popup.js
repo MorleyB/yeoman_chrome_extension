@@ -18,7 +18,7 @@ j(document).ready(function(){
       envUrl = "https://touchstream.io/auth/google/";
       break
     default:
-      envUrl = "http://lvh.me:3000/auth/google/";
+      envUrl = "http://lvh.me:3000/";
   }
 
 
@@ -28,56 +28,59 @@ j(document).ready(function(){
   });
 
 
-  function populateSelectBox(){
-     var resp = {"streams": [ {name: "theName", id: "1"}, {name: "reallyLongStreamName", id: "2"}]};
-     var optionTemplate = "<option value=\"{streamID}\">{streamName}</option>";
-     for(var i = 0; i < resp.streams.length; i++){
-       var obj = resp.streams[i];
-       var currentOptionTemplate = optionTemplate;
-       currentOptionTemplate = currentOptionTemplate.replace("{streamID}", obj.id);
-       currentOptionTemplate = currentOptionTemplate.replace("{streamName}", obj.name);
-       j("#selectedStream").append(j(currentOptionTemplate));
+  function populateSelectBox(resp){
+     var streamTemplate = "<li id=\"{streamID}\" class=\"list\">{streamName}</li>";
+     for(var i = 0; i < resp.length; i++){
+       var obj = resp[i];
+       var currentStreamTemplate = streamTemplate;
+       currentStreamTemplate = currentStreamTemplate.replace("{streamID}", obj.id);
+       currentStreamTemplate = currentStreamTemplate.replace("{streamName}", obj.name);
+       j("#streams-list").append(currentStreamTemplate);
      }
   }
 
 
   function GETStreamOrRedirect() {
-    xhr.open("GET", "#{envUrl}/streams", true);
+    xhr.open("GET", envUrl + "streams.json", true);
     xhr.onreadystatechange = function() {
       if (xhr.readyState == 4) {
-        // var resp = JSON.parse(xhr.responseText);
-        // pass to list stream function
+        var resp = JSON.parse(xhr.responseText);
+        populateSelectBox(resp);
       } else {
         if (xhr.status == 401) {
-          chrome.tabs.update(current_tab_id, {url: envUrl + "sign_in"});
+          chrome.tabs.update(current_tab_id, {url: envUrl + "auth/google"});
         } else {
         //   alert('not hooked up yet');
         }
       }
     }
     xhr.send();
-    populateSelectBox();
   }
 
+  j("#streams-list").on("click", "li.list", function(e) {
+    j('#streams-list li').removeClass('selected-list');
+    var selected_list = j(e.target);
+    j(e.target).addClass('selected-list');
+  });
+
 	j("#saveButton").click(function() {
-		//get ID from selected option
-		//get name of stream and message
-		//should not post if no id selected / undefined
-	//	var stream = j("#selectedStream option:selected").text();
-		var ID = j("#selectedStream option:selected").val();
+		var ID = j(".selected-list")[0].getAttribute('id');
+    var subject = j('input').val();
 		var blurb = j("#blurb_stream").val();
 
-		//if(blurb != undefined){
-    		xhr.open("POST", "#{envUrl}/streams/#{ID}/#{blurb}", true);
-    		xhr.onreadystatechange = function() {
-    			if (xhr.readyState == 4) {
-    				alert('saved!');
-    				} else {
-    				alert('not working');
-    				}
-    	}
-    	xhr.send();
-		//}
+    // check this!
+		if(blurb.length != '' && ID != undefined && subject.length != ''){
+  		xhr.open("POST", envUrl + "streams/" + ID + "/touches/new?subject=" + subject + "&body=" + blurb, true);
+      debugger
+  		xhr.onreadystatechange = function() {
+  			if (xhr.readyState == 4) {
+  				console.log('saved!');
+  				} else {
+  				alert('not working');
+  				}
+      	}
+      	xhr.send();
+		}
 	});
 
   setTimeout(function() {

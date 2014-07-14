@@ -6,36 +6,30 @@
 
         <!-- build:css styles/main.css -->
         <link href="styles/bootstrap.min.css" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet" type='text/css'>
         <link href="styles/main.css" rel="stylesheet">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
 
         <!-- bower:js -->
         <!-- endbower -->
 
         <!-- build:js scripts/popup.js -->
-        <script src="scripts/bootstrap.min.js"></script>
         <!-- endbuild -->
     </head>
     <body>
-      <div id="header">
-          <h2>touchStream</h2>
+      <div class="side-area">
+        <div id="header">
+          <div id="logo"></div>
+        </div>
+        <div id="streams-container">
+          <ul id="streams-list"></li>
+        </div>
       </div>
 
-      <div id="lower-content">
-        <div class="pull-left" id="text-left">
-          <textarea id="blurb_stream"></textarea>
-        </div>
-
-        <div class="pull-left" id="options-right">
-          <div class="select-style"><select id="selectedStream">
-            <option>Select a stream</option>
-          </select></div>
-          <button id="saveButton" class="btn">Add</button>
-        </div>
-
-        <div id="loading_spinner"></div>
-        <h5 id="current_location"></h5>
+      <div id="main-area">
+        <input placeholder="Add a Subject"></input>
+        <textarea id="blurb_stream"></textarea>
+         <button id="saveButton" class="btn">Add to Stream</button>
       </div>
     </body>
 
