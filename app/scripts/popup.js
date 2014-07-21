@@ -6,7 +6,7 @@ var current_url = undefined;
 var current_tab_id = undefined;
 var j = jQuery.noConflict();
 var xhr = new XMLHttpRequest();
-
+var calendarIcon = '<i class="fa fa-calendar"></i>';
 
 j(document).ready(function(){
 
@@ -30,15 +30,26 @@ j(document).ready(function(){
 
   function populateSelectBox(resp){
      var streamTemplate = "<li id=\"{streamID}\" class=\"list\">{streamName}</li>";
+     var iconTemplate = '<li id=\"{streamID}\" class=\"list\">{streamName} <div class= "calender-picker"> <input class="datepicker-input" data-date-format="mm/dd/yyyy"><i class="fa fa-calendar pull-right"></i></div></li>';
+     var currentStreamTemplate = undefined;
      for(var i = 0; i < resp.length; i++){
        var obj = resp[i];
-       var currentStreamTemplate = streamTemplate;
+      if(obj.type == "ScheduledStream"){
+        currentStreamTemplate = iconTemplate;
+
+      } else {
+        currentStreamTemplate = streamTemplate;
+
+      }
        currentStreamTemplate = currentStreamTemplate.replace("{streamID}", obj.id);
        currentStreamTemplate = currentStreamTemplate.replace("{streamName}", obj.name);
        j("#streams-list").append(currentStreamTemplate);
      }
   }
 
+   j(document).on('click', '.datepicker-input', function(){
+      j(this).datepicker();
+    }); 
 
   function GETStreamOrRedirect() {
     xhr.open("GET", envUrl + "streams.json", true);
