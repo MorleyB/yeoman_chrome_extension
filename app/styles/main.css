@@ -114,37 +114,7 @@ ul li:hover {
   margin-top: -2px;
   z-index: 100;
 }
-.calender-picker {
-  float: right;
-  width: 24%;
-  height: 19%;
-  font-size: 17px;
-  margin-right: -5px;
-  margin-top: -46px;
-  cursor: pointer;
-  position: relative;
-  &:hover { opacity: .7; }
-  i {
-    position: absolute;
-    left: 0;
-    background: #fff;
-    margin-top: 5px;
-    pointer-events: none;
-    top: 0px;
-    cursor: default;
-  }
-}
-.datepicker-input {
-  width: 30px;
-  border: none;
-  outline: 0;
-  background: none;
-  color: #fff;
-  margin-top: 21px;
-  color: transparent;
-  text-shadow : 0 0 0 #000;
-  cursor: pointer;
-}
+
 textarea {
   width: 91%;
   height: 70px;
@@ -160,20 +130,29 @@ textarea, input {
 
 input {
   padding: 4px 8px;
-  width: 90%;
+  width: 71%;
+  float: left;
   border: 1px solid #ddd;
 }
 
-button {
+button#saveButton{
   padding: 5px 10px;
   width: 100%;
 }
 
-.datepicker{
-  font-size: 10px;
-  margin-top: -40px;
+.datepicker {
+  float: left;
+  padding: 6px;
+  color: #A7B1C2;
+  margin-top: 0px;
+}
+.datepicker.dropdown-menu{
+  top: -8px !important;
+  left: 113px !important;
+  font-size: 10px !important;
+  cursor: pointer;
 }
 
-.datepicker:.dropdown-menu{
-  top: 37px;
+button.datepicker {
+  background-color: #2F4050;
 }
