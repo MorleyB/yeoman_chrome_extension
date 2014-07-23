@@ -70,26 +70,35 @@ j(document).ready(function(){
     j(e.target).addClass('selected-list');
   });
 
-	j("#saveButton").click(function() {
-		var ID = j(".selected-list")[0].getAttribute('id');
-    var subject = j('input').val();
-		var blurb = j("#blurb_stream").val();
+j("#saveButton").click(function () {
+  var ID = j(".selected-list")[0].getAttribute('id')
+  j.ajax({
+     data: {
+      "date":    j('.datepicker').val(),
+      "ID":      ID,
+      "subject": j('input').val(),
+      "blurb":   j("#blurb_stream").val()
+    },
+    url: envUrl + "streams/" + ID + "/touches",
+    type: "POST",
+    success: function () {
+      alert('you did it!');
+      alert(1);  
+    }
+  });
+});
 
-    // check this!
-		if(blurb.length != '' && ID != undefined && subject.length != ''){
-  		xhr.open("POST", envUrl + "streams/" + ID + "/touches/new?subject=" + subject + "&body=" + blurb, true);
-      debugger
-  		xhr.onreadystatechange = function() {
-  			if (xhr.readyState == 4) {
-  				console.log('saved!');
-  				} else {
-  				alert('not working');
-  				}
-      	}
-      	xhr.send();
-		}
-	});
-
+  // 		xhr.open("POST", envUrl + "streams/" + ID + "/touches?subject=" + subject + "&body=" + blurb, true);
+  // 		xhr.onreadystatechange = function() {
+  // 			if (xhr.readyState == 4) {
+  // 				console.log('saved!');
+  // 				} else {
+  // 				alert('not working');
+  // 				}
+  //     	}
+  //     	xhr.send();
+		// }
+ 
   setTimeout(function() {
   	var prefill = "Thought you might find this interesting. &#013; &#013;" + current_url;
     j("#blurb_stream").html(prefill);
