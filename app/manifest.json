@@ -32,10 +32,14 @@
     "run_at": "document_end"
   }
   ],
-    "permissions": [
-        "tabs",
-        "https://touchstream.io/auth/google/*",
-        "https://staging.touchstream.io/auth/google/*",
-        "http://lvh.me:3000/auth/google/*"
-    ]
+  "permissions": [
+      "tabs",
+      "https://touchstream.io/auth/google/*",
+      "https://staging.touchstream.io/auth/google/*",
+      "http://lvh.me:3000/auth/google/*",
+      "notifications"
+  ],
+  "web_accessible_resources": [
+     "icon.png"
+   ]
 }

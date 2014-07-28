@@ -6,16 +6,178 @@ html {
 }
 
 body {
-  min-width: 350px;
+  min-width: 450px;
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
-  padding: 0 !important;
+  padding: 20px;
   margin: 0 !important;
   color: #676a6c;
-  height: 100%;
 }
 
-h2{
+.logo { float: right; }
+
+img {
+  height: 28px;
+  margin-bottom: 10px;
+}
+/*============ Content editable styles ===========================*/
+
+[contenteditable]:focus { outline: 0px solid transparent; }
+#blurb_subject[contenteditable]:empty:before {content:"Add a Subject...";}
+#blurb_stream[contenteditable]:empty:before {content:"Write a message here...";}
+
+
+
+/*============ Streams list styles ===========================*/
+
+ul {  margin: 0 0 20px 0 !important; }
+
+.streams-container {
+  border-bottom: 1px solid #ced7df;
+  margin-bottom: 9px;
+}
+
+#streams-list { width: 83%; }
+
+#streams-list li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  background-color: #DDDDDD;
+  font-weight: 300;
+  color: #8D8A8A;
+  cursor: pointer;
+}
+
+#streams-list li:hover {
+  background: #E0DFDF;
+}
+
+.selected-list {
+  background: #1AB394 !important;
+  color: #fff !important;
+}
+
+.long-msg {
+  margin-top: -10px;
+  padding-bottom: 10px;
+  color: red;
+}
+
+
+/*============ Blurb styles ===========================*/
+
+#touch-area { min-height: 90px; }
+#blurb_subject {
+  padding: 8px 0;
+  margin-bottom: 15px;
+  width: 70%;
+  float: left;
+}
+
+#blurb_touch {
+  min-height: 100px;
+}
+
+#blurb_schedule {
+  float: right;
+  width: 28%;
+}
+
+#blurb_stream {
+  min-height: 80px;
+}
+
+.fa-calendar {
+  font-size: 18px;
+  padding: 5px;
+  border: 1px solid #C7C7C7;
+  border-radius: 4px;
+  color: #797979;
+  float: right;
+}
+
+.datepicker {
+  font-size: 12px;
+  cursor: pointer;
+  width: 66%;
+  outline: 0;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-right: none;
+}
+
+.dropdown-menu {
+  top: 10px !important;
+  left: 81px !important;
+}
+
+.alert-danger {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+.badge {
+  position: absolute;
+}
+
+.b-subject {
+  margin-left: -200px;
+  margin-top: 8px;
+}
+
+.b-stream {
+  margin-top: -78px;
+  left: 184px;
+}
+
+.b-schedule {
+  margin-top: 6px;
+  margin-left: -86px;
+}
+
+.b-list {
+  top: 26px;
+  right: 22px;
+}
+
+/*============ Messages & Notices styles ===========================*/
+
+#messages-area {
+  min-height: 30px;
+}
+
+.btn, .btn:focus {
+  float: right;
+  border: 1px solid #dd4b39;
+  background: #dd4b39;
+  color: #fff;
+  background-image: none;
+  text-shadow: none;
+}
+
+.btn:hover {
+  color: #dd4b39;
+  background: none;
+}
+
+#current-url {
+  max-width: 300px;
+  float: left;
+  word-break:break-all;
+}
+
+.display {
+  display: none;
+}
+
+
+/*h2{
   font-size: 22px;
   font-weight: 100;
   line-height: lighter;
@@ -24,9 +186,11 @@ h2{
   margin: 0;
   background: rgb(240, 240, 240);
   padding: 15px 0;
-}
+}*/
 
-.side-area {
+
+
+/*.side-area {
   width: 35%;
   color: #A7B1C2;
   float: left;
@@ -60,24 +224,24 @@ ul li:hover {
 .selected-list {
   border-left: 5px solid #1AB394;
   background: #364D63;
-}
+}*/
 
-#logo {
+/*#logo {
   border-radius: 50%;
   background: #bbb;
   height: 48px;
   width: 48px;
-}
+}*/
 
-#main-area {
+/*#main-area {
   width: 56%;
   float: left;
   padding: 15px;
-}
+}*/
 
 /*====== select box, button and text area styles =========*/
 
-.select-style {
+/*.select-style {
   border-bottom: 1px solid #ccc;
   width: 100%;
   border-radius: 3px;
@@ -130,11 +294,21 @@ textarea, input {
 
 input {
   padding: 4px 8px;
-  width: 90%;
+  width: 71%;
+  float: left;
   border: 1px solid #ddd;
-}
+}*/
 
-button {
-  padding: 5px 10px;
-  width: 100%;
+
+/*.datepicker {
+  float: left;
+  padding: 6px;
+  color: #A7B1C2;
+  margin-top: 0px;
 }
+.datepicker.dropdown-menu{
+  top: -8px !important;
+  left: 113px !important;
+  font-size: 10px !important;
+  cursor: pointer;
+}*/
