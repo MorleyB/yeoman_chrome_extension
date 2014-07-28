@@ -146,7 +146,7 @@ j(document).ready(function(){
     j('#saveButton').html('Saved');
     setTimeout(function() {
       j('#saveButton').html('Add to Queue');
-    }, 100);
+    }, 2000);
   }
 
 
@@ -156,7 +156,7 @@ j(document).ready(function(){
       prefill = ''
     }
     j("#current-url").html(prefill);
-  }, 2000);
+  }, 100);
 
 
   GETStreamOrRedirect();
