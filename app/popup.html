@@ -10,6 +10,7 @@
         <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700" rel="stylesheet" type='text/css'>
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="styles/main.css" rel="stylesheet">
+        <link href="styles/css/animate.css" rel="stylesheet">
 
 
         <!-- endbuild -->
@@ -21,21 +22,30 @@
         <!-- endbuild -->
     </head>
     <body>
-      <div class="side-area">
-        <div id="header">
-          <div id="logo"> </div>
+      <div id="body-container">
+        <div class="streams-container">
+          <ul id="streams-list"></ul><span class="badge alert-danger b-list display pull-right">Required</span>
+          <div class="long-msg display"><em>Sign in with your Google Account to access your stream.</em></div>
         </div>
-        <div id="streams-container">
-          <ul id="streams-list"></li>
+
+        <div id="touch-area" class="clearfix">
+          <div class="clearfix">
+            <div id="blurb_subject" contenteditable="true"></div><span class="badge alert-danger b-subject display">Required</span>
+            <div id="blurb_schedule">
+              <input class="datepicker" data-orientation="right" data-format="yyyy-mm-dd">
+              </input>
+              <i class="fa fa-calendar"></i><span class="badge alert-danger b-schedule display">Required</span>
+            </div>
+          </div>
+          <div id="blurb_stream" contenteditable="true"></div><span class="badge alert-danger b-stream display">Required</span>
+        </div>
+
+        <div id="messages-area" class="clearfix">
+          <div id="current-url"></div>
+          <button id="saveButton" class="btn pull-right">Add to Queue</button>
         </div>
       </div>
 
-      <div id="main-area">
-        <input placeholder="Add a Subject"></input>
-        <button class="datepicker"><i class="fa fa-calendar pull-right"></i></button>
-        <textarea id="blurb_stream"></textarea>
-         <button id="saveButton" class="btn">Add to Stream</button>
-      </div>
     </body>
 
     <script src="scripts/jquery.min.js" type="text/javascript"></script>
