@@ -24,7 +24,7 @@ img {
 
 [contenteditable]:focus { outline: 0px solid transparent; }
 #blurb_subject[contenteditable]:empty:before {content:"Add a Subject...";}
-#blurb_stream[contenteditable]:empty:before {content:"Write a message here...";}
+#blurb_stream[contenteditable]:empty:before {content:"Thought you would find this interesting.";}
 
 
 

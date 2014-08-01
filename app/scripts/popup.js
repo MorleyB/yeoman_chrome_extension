@@ -129,7 +129,7 @@ j(document).ready(function(){
         type: 'post',
         url: envUrl + 'streams/' + id + '/touches',
         dataType: 'json',
-        data: { touch: { string_id: id, subject: j('#blurb_subject').html(), body: j("#blurb_stream").html(), schedule_on: j('.datepicker').val() }},
+        data: { touch: { string_id: id, subject: j('#blurb_subject').html(), body: j("#blurb_stream").html().concat(j('#current-url').html()), schedule_on: j('.datepicker').val() }},
         success: resetView()
       })
 
