@@ -1,5 +1,5 @@
 {
-    "name": "touchStream",
+    "name": "TouchStream",
     "version": "1.1",
     "manifest_version": 2,
     "description": "Touchstream provides an efficient method of maintaining strong relationships with clients.",
