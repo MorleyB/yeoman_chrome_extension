@@ -1,5 +1,5 @@
 var j = jQuery.noConflict();
-// j( document ).ready(function() {
+// var gmail = Gmail();
   setInterval(
     function() {
       addToInbox();
