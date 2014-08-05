@@ -16,7 +16,7 @@ var runCode = function() {
 }
 
 var checkLoaded = function() {
-  if(window.jQuery && Gmail()) {
+  if(window.jQuery && Gmail && Gmail().get) {
     $.fn.onAvailable = function(e) {
       var t = this.selector;
       var n = this;
