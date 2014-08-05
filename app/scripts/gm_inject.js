@@ -11,7 +11,7 @@ var runCode = function() {
       // TEMPORARY - JUST GETTING VALUES TO USE
       getValues();
     },
-    250
+    1000
   );
 }
 
