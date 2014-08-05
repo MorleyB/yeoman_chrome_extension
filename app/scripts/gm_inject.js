@@ -46,34 +46,9 @@ function addButton() {
   }
 }
 
-function getValues() {
-  url = location.href;
-  if(url.length == 56) {
-    // WHICH THREAD
-    if(typeof id != "number") {
-      var id = Gmail().get.email_id();
-    } else {
-      id = Gmail().get.email_id();
-    }
-    
-    // EVERYTHING ABOUT THREAD
-    if(typeof data != "object") {
-      var data = Gmail().get.email_data(id);
-    } else {
-      data = Gmail().get.email_data(id);
-    }
-
-    // EMAIL ADDRESSES
-    if(typeof me != "string") {
-      var me = Gmail().get.user_email();
-    } else {
-      me = Gmail().get.user_email();
-    }
-
-    if(typeof everyone != "object") {
-      var everyone = data.threads.people_involved;
-    } else {
-      everyone = data.threads.people_involved;
-    }
-  }
+function getAllValues() {
+  console.log(Gmail().get.email_id());
+  console.log(Gmail().get.email_data(id));
+  console.log(Gmail().get.user_email());
+  console.log(data.threads.people_involved);
 }
