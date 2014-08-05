@@ -40,6 +40,6 @@ function addButton() {
   }
 }
 
-$.(":contains('Add Contact to Stream')").click(function() {
+$(":contains('Add Contact to Stream')").click(function() {
   $('#modal').plainModal('open');
 });
