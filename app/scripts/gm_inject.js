@@ -52,19 +52,28 @@ function getValues() {
     // WHICH THREAD
     if(typeof id != "number") {
       var id = Gmail().get.email_id();
+    } else {
+      id = Gmail().get.email_id();
     }
     
     // EVERYTHING ABOUT THREAD
     if(typeof data != "object") {
       var data = Gmail().get.email_data(id);
+    } else {
+      data = Gmail().get.email_data(id);
     }
 
     // EMAIL ADDRESSES
     if(typeof me != "string") {
       var me = Gmail().get.user_email();
+    } else {
+      me = Gmail().get.user_email();
     }
+
     if(typeof everyone != "object") {
       var everyone = data.threads.people_involved;
+    } else {
+      everyone = data.threads.people_involved;
     }
   }
 }
