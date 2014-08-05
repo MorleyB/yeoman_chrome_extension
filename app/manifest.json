@@ -26,10 +26,7 @@
   "content_scripts": [
   {
     "matches": ["https://mail.google.com/mail/u/*/*"],
-    "css": ["styles/inject.css"],
-    "js": ["scripts/static/jquery.min.js", "scripts/content.js"],
-    "all_frames": true,
-    "run_at": "document_end"
+    "js": ["scripts/load.js"]
   }
   ],
   "permissions": [
