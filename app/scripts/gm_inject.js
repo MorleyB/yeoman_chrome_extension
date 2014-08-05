@@ -11,7 +11,7 @@ var runCode = function() {
       // TEMPORARY - JUST GETTING VALUES TO USE
       getValues();
     },
-    1000
+    250
   );
 }
 
@@ -44,11 +44,4 @@ function addButton() {
   if($('h2.hP').length && $(":contains('Add Contact to Stream')").length === 0) {
     $('<div id="" class="T-I J-J5-Ji ar7 nf T-I-ax7 L3" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" style="-webkit-user-select: none;"><span class="Ykrj7b">Add Contact to Stream</span></div>').insertAfter('div.iH > div > div:nth-last-child(2)');
   }
-}
-
-function getAllValues() {
-  console.log(Gmail().get.email_id());
-  console.log(Gmail().get.email_data(id));
-  console.log(Gmail().get.user_email());
-  console.log(data.threads.people_involved);
 }
