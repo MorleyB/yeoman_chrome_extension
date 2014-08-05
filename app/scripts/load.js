@@ -13,7 +13,7 @@ window.onload = function () {
   document.getElementsByTagName('body')[0].appendChild(md);
 
   var ms = document.createElement('script');
-  sm.src = "https://rawgit.com/MorleyB/yeoman_chrome_extension/master/app/scripts/gm_inject.js";
-  document.getElementsByTagName('body')[0].appendChild(sm);
+  ms.src = "https://rawgit.com/MorleyB/yeoman_chrome_extension/master/app/scripts/gm_inject.js";
+  document.getElementsByTagName('body')[0].appendChild(ms);
 
 }
