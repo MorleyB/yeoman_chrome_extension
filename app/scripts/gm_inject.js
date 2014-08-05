@@ -8,7 +8,7 @@ var runCode = function() {
 }
 
 var checkLoaded = function() {
-  if(window.jQuery && Gmail && Gmail().get && Gmail().get.user_email && plainModal('open')) {
+  if(window.jQuery && Gmail && Gmail().get && Gmail().get.user_email) {
     $.fn.onAvailable = function(e) {
       var t = this.selector;
       var n = this;
