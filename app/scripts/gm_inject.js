@@ -25,7 +25,7 @@ var checkLoaded = function() {
 
     // your code
     runCode();
-    $(document.body).append('<div id="modal"></div>');
+    $(document.body).append('<div id="modal">TESTING</div>');
 
   } else {
     setTimeout(checkLoaded, 100);
