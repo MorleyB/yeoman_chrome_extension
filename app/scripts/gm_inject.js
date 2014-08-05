@@ -1,12 +1,12 @@
 var runCode = function() {
+  $(document.body).append('<div id="modal"><p>TESTING</p></div>');
+    var modal = $('#modal').plainModal({duration: 500});
+  $(":contains('Add Contact to Stream')").click(function(){
+    modal.plainModal('open');
+  });
   setInterval(
     function() {
       addButton();
-      $(document.body).append('<div id="modal"><p>TESTING</p></div>');
-      var modal = $('#modal').plainModal({duration: 500});
-      $(":contains('Add Contact to Stream')").click(function(){
-        modal.plainModal('open');
-      });
     },
     250
   );
