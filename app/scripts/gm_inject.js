@@ -8,8 +8,6 @@ var runCode = function() {
   setInterval(
     function() {
       addButton();
-      // TEMPORARY - JUST GETTING VALUES TO USE
-      getValues();
     },
     250
   );
