@@ -57,6 +57,6 @@ function getValues() {
 
     // EMAIL ADDRESSES
     var me = Gmail().get.user_email();
-    var everyone = data.threads.people_involved; 
+    var everyone = data.threads.people_involved;
   }
 }
