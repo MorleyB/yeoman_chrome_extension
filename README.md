@@ -13,3 +13,8 @@ Stubbed items to change:
 5. Add the extension directory using the uploader
 
 Extension will be added to the right of the address bar as a blue circle icon
+
+Gmail
+========
+Unofficial JS API - https://github.com/KartikTalwar/gmail.js
+Load all injected files to Gmail from an SSL/https URL (ex: rawgit, update URLs in scripts/load.js after migrating repo)
