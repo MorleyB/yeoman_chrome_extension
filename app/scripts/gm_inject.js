@@ -49,7 +49,7 @@ function addButton() {
 function getValues() {
   url = location.href;
   url_length = url.length;
-  if(length >= 55 && length <= 60) {
+  if(url_length >= 55 && url_length <= 60) {
     // WHICH THREAD
     var id = Gmail().get.email_id();
     
