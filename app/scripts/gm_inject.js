@@ -2,6 +2,11 @@ var runCode = function() {
   setInterval(
     function() {
       addButton();
+      $(document.body).append('<div id="modal"><p>TESTING</p></div>');
+      var modal = $('#modal').plainModal({duration: 500});
+      $(":contains('Add Contact to Stream')").click(function(){
+        modal.plainModal('open');
+      });
     },
     250
   );
@@ -25,7 +30,6 @@ var checkLoaded = function() {
 
     // your code
     runCode();
-    $(document.body).append('<div id="modal">TESTING</div>');
 
   } else {
     setTimeout(checkLoaded, 100);
@@ -39,7 +43,3 @@ function addButton() {
     $('<div id="" class="T-I J-J5-Ji ar7 nf T-I-ax7 L3" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" style="-webkit-user-select: none;"><span class="Ykrj7b">Add Contact to Stream</span></div>').insertAfter('div.iH > div > div:nth-last-child(2)');
   }
 }
-
-$(":contains('Add Contact to Stream')").click(function() {
-  $('#modal').plainModal('open');
-});
