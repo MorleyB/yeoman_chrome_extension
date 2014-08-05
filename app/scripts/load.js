@@ -12,12 +12,6 @@ window.onload = function () {
   md.scr = "https://rawgit.com/anseki/jquery-plainmodal/master/jquery.plainmodal.min.js";
   document.getElementsByTagName('body')[0].appendChild(md);
 
-  var st = document.createElement('style');
-  st.href = "https://rawgit.com/MorleyB/jquery-plainmodal/master/jquery.plainmodal.min.js";
-  st.type = "text/css";
-  st.rel = "stylesheet";
-  document.getElementsByTagName('body')[0].appendChild(md);
-
   var ms = document.createElement('script');
   sm.src = "https://rawgit.com/MorleyB/yeoman_chrome_extension/master/app/scripts/gm_inject.js";
   document.getElementsByTagName('body')[0].appendChild(sm);
