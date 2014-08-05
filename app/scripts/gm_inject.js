@@ -48,16 +48,23 @@ function addButton() {
 
 function getValues() {
   url = location.href;
-  url_length = url.length;
-  if(url_length >= 55 && url_length <= 60) {
+  if(url.length == 56) {
     // WHICH THREAD
-    var id = Gmail().get.email_id();
+    if(typeof id != "number") {
+      var id = Gmail().get.email_id();
+    }
     
     // EVERYTHING ABOUT THREAD
-    var data = Gmail().get.email_data(id);
+    if(typeof data != "object") {
+      var data = Gmail().get.email_data(id);
+    }
 
     // EMAIL ADDRESSES
-    var me = Gmail().get.user_email();
-    var everyone = data.threads.people_involved;
+    if(typeof me != "string") {
+      var me = Gmail().get.user_email();
+    }
+    if(typeof everyone != "object") {
+      var everyone = data.threads.people_involved;
+    }
   }
 }
